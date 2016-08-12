@@ -1,4 +1,6 @@
 <?php
+require_once(dirname(__FILE__) . "/config.php");
+
 error_reporting(E_ALL);
 setlocale(LC_ALL, "ja_JP.utf8");
 
@@ -10,25 +12,6 @@ $say = array(
         "content" => $content
     )
 );
-
-/**
- * get DB connection(PDO)
- */
-function getDB(){
-    $db = dirname(__FILE__) . "/chat.db";
-    $dsn = "sqlite:" . $db;
-    $user = '';
-    $pass = '';
-    $dbh;
-    try{
-        $dbh = new PDO($dsn, $user, $pass);
-        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    }catch (PDOException $e){
-        echo('Error:'.$e->getMessage());
-        die();
-    }
-    return $dbh;
-}
 
 function insertSay($name,$content){
     $sql = "insert into chat(name,content) values(:name,:content);";

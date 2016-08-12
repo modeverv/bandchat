@@ -33,12 +33,14 @@ if(isset($_REQUEST["name"])){
       <div class="me">
         <h5>{name}</h5>
         <div>{content}</div>
+        <div style="text-align:right;">{date}</div>
       </div>
     </script>
     <script type="text/template" id="other">
       <div class="other">
         <h5>{name}</h5>
         <div>{content}</div>
+        <div style="text-align:left;">{date}</div>
       </div>
     </script>
   </head>

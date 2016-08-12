@@ -6,7 +6,9 @@ var App = {
                  url: "load.php",
                  data: {cursor:cursor},
                  success:function(data){
-                     App._plot(data);
+                     if(data.length > 0){
+                         App._plot(data);
+                     }
                  }
              });
   },
@@ -50,9 +52,7 @@ var App = {
       }
       $("#chat").append(App._data);
       App._data = "";
-      if(data.length > 0){
-        App._bottom();
-      }
+      App._bottom();
   },
   _plot_ : function(chat,kind){
       if(kind == "me"){
@@ -60,13 +60,14 @@ var App = {
       }else{
         var template = $("#other").text();
       }
-      var plot = template.replace(/\{name\}/,chat.name).replace(/\{content\}/,chat.content);
+      var plot = template.replace(/\{name\}/,chat.name).replace(/\{content\}/,chat.content).replace(/\{date\}/,chat.created_at);
       App._data += plot;
   }
 };
 
 
 $(function(){
+  // initial load 
   App.load("load");
   // event
   $("#say").click(function(){ App.say(); });
