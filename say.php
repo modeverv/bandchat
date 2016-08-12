@@ -17,7 +17,7 @@ function insertSay($name,$content){
     $sql = "insert into chat(name,content) values(:name,:content);";
     $pdo = getDB();
     $stmt = $pdo->prepare($sql);
-    $stmt->execute(array(":name" => $name, ":content" => nl2br($content)));
+    $stmt->execute(array(":name" => $name, ":content" => nl2br(htmlspecialchars($content))));
 }
 
 insertSay($name,$content);
