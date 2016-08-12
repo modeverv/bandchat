@@ -17,7 +17,7 @@ if(isset($_REQUEST["name"])){
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <title>bandchat</title>
-    <link rel="stylesheet" href="css/app.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/app.css?<?php echo time()?>" type="text/css" media="screen" />
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>    
     <script>
       var NAME = '名無し';
@@ -28,7 +28,7 @@ if(isset($_REQUEST["name"])){
           return NAME;
       }
     </script>
-    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/app.js?<?php echo time()?>"></script>
     <script type="text/template" id="me">
       <div class="me">
         <h5>{name}</h5>
