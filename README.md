@@ -3,7 +3,15 @@
 ## ただのポーリングだよ
 リアルタイムといってもただのポーリングだよワッショイ！
 ## エスケープしてないよ！
-htmlspecialcharぐらいしてよ。こわいから。
+htmlspecialcharぐらいしてよ。こわいから。  
 →流石にした。
- 
+## create table
+```sql
+CREATE TABLE IF NOT EXISTS chat(
+  id integer primary key,
+  name text,
+  content text,
+  created_at TIMESTAMP DEFAULT (DATETIME('now','localtime'))
+);
+```
 
