@@ -1,0 +1,45 @@
+* {
+    word-break:break-all;
+}    
+h5 {
+    margin-top:5px;
+    margin-bottom:0px;
+}
+#main {
+    height:100%;
+}
+#chat {
+    width:100%;
+    margin-bottom:120px;
+    y-overflow:scroll
+}
+#chat > div {
+    border: 1px solid;
+    border-radius:10px;
+    width:60%;
+    padding:5px;
+}
+#inputarea {
+    background-color:white;
+    position:fixed;
+    width:90%;
+    height:120px;
+    bottom:0;
+}    
+#input {
+    width:100%;
+}
+.me {
+    margin-left:37%;
+    text-align:left;
+    background-color:lightgreen;
+}
+.other {
+    text-align:left;
+    margin-left:0%;
+    background-color:lightblue;
+}
+#chat > div {
+    margin-top:0px;
+    margin-bottom:10px;
+}
