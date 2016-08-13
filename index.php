@@ -46,7 +46,7 @@ if(isset($_REQUEST["name"])){
   </head>
   <body>
     <div id="main">
-      <h1>おれらのLINE<br/>(<span style="color:red">not secure</span>)</h1>
+      <h1>おれらのLINE</h1>
       <div id="chat">
       </div>
       <div id="inputarea">
