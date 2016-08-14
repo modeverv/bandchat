@@ -30,17 +30,17 @@ if(isset($_REQUEST["name"])){
     </script>
     <script type="text/javascript" src="js/app.js?<?php echo time()?>"></script>
     <script type="text/template" id="me">
-      <div class="me">
+      <div class="me arrow-right">
         <h5>{name}</h5>
         <div>{content}</div>
         <div style="text-align:right;">{date}</div>
       </div>
     </script>
     <script type="text/template" id="other">
-      <div class="other">
+      <div class="other arrow-left">
         <h5>{name}</h5>
         <div>{content}</div>
-        <div style="text-align:left;">{date}</div>
+        <div style="text-align:right;">{date}</div>
       </div>
     </script>
   </head>
