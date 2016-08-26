@@ -1,5 +1,5 @@
 function App(){}
-App.prototype.serverRead = function(_cursor){
+App.prototype.load = function(_cursor){
     $.ajax({
         context:this,
         async:true,
@@ -14,7 +14,7 @@ App.prototype.serverRead = function(_cursor){
     });
 };
 App.prototype.refresh = function(){
-    this.serverRead(this._cursor);
+    this.load(this._cursor);
 };
 App.prototype.say = function(){
     var content = $("#input").val();
@@ -67,10 +67,11 @@ App.prototype._plotInner = function(chat,kind){
     this._data += html;
 };
 
+/** main */
 $(function(){
     var chat = new App();
     // initial load
-    chat.serverRead("load");
+    chat.load("load");
     // event
     $("#say").click(function(){ chat.say(); });
     // polling
